@@ -1,0 +1,62 @@
+header {
+    height: 92px;
+    background-color: #CF2B2B;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.titulo {
+    font-family: Righteous;
+    font-size: 44px;
+    color: #FFFFFF;
+    margin: 8px 0px 0px 21px;
+}
+
+.subtitulo {
+    font-family: Roboto;
+    font-size: 18px;
+    color: #FFFFFF;
+    margin: 5px 0px 0px 21px;
+}
+
+html, main {
+    background-color: #E5E5E5;
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo-opcoes {
+    font-family: Righteous;
+    font-size: 26px;
+    color: #333333;
+    margin-left: 19px;
+    margin-bottom: 17px;
+}
+
+.pratos-principais {
+    display: flex;
+    overflow: scroll;
+}
+
+.prato-principal {
+    display: flex;
+    flex-direction: row;
+    height: 216px;
+    min-width: 172px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    margin-left: 19px;
+}
+
+footer {
+    height: 92px;
+    background-color: white;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
