@@ -1,3 +1,7 @@
+* {
+	box-sizing: border-box;
+}
+
 header {
     height: 92px;
     background-color: #CF2B2B;
@@ -23,7 +27,8 @@ header {
 
 html, main {
     background-color: #E5E5E5;
-    margin-top: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -32,31 +37,82 @@ html, main {
     font-family: Righteous;
     font-size: 26px;
     color: #333333;
-    margin-left: 19px;
-    margin-bottom: 17px;
+    margin: 27px 0px 17px 19px;
 }
 
-.pratos-principais {
+.items-menu {
     display: flex;
     overflow: scroll;
+    border-bottom: 27px;
 }
 
-.prato-principal {
+.item-menu {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
     height: 216px;
     min-width: 172px;
     background: #FFFFFF;
     box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25);
     border-radius: 9px;
     margin-left: 19px;
+    padding: 18px 14px 13px 14px;
+}
+
+.item-menu img {
+    height: 87px;
+    width: 144px;
+    border-radius: 4px;
+}
+
+h1 {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333333;
+}
+
+h2 {
+    font-family: Roboto;
+    font-weight: 300;
+    font-size: 15px;
+    color: #A6A6A6;
+}
+
+h3 {
+    font-family: Roboto;
+    font-size: 16px;
+    color: #000000;
 }
 
 footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 92px;
     background-color: white;
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
+}
+
+footer p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    letter-spacing: 0.018em;
+}
+
+footer button {
+    height: 61px;
+    width: 364px;
+    color: white;
+    background-color: #cbcbcb;
+    outline: none;
+    border: none;
+    border-radius: 50px;
 }
