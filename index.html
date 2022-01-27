@@ -25,25 +25,28 @@
 
         <p class="titulo-opcoes">Primeiro, seu prato</p>
         <div class="pratos-principais items-menu">
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarPratoPrincipal(this)">
                 <img src="icones/picanha.jpg" alt="prato picanha">
                 <h1>Picanha</h1>
                 <h2>Um pouco de carne e gordura, um pouco de sal</h2>
                 <h3>R$ 60,00</h3>
+                <ion-icon class="checkmark escondido" name="checkmark-circle"></ion-icon>
             </div>
             
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarPratoPrincipal(this)">
                 <img src="icones/ceviche.jpg" alt="prato ceviche">
                 <h1>Ceviche</h1>
                 <h2>Um pouco de peixe, um pouco de limão</h2>
                 <h3>R$ 80,00</h3>
+                <ion-icon class="checkmark escondido" name="checkmark-circle"></ion-icon>
             </div>
             
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarPratoPrincipal(this)">
                 <img src="icones/tacos.jpg" alt="prato tacos">
                 <h1>Tacos</h1>
                 <h2>Um pouco de carne, um pouco de queijo</h2>
                 <h3>R$ 30,00</h3>
+                <ion-icon class="checkmark escondido" name="checkmark-circle"></ion-icon>
             </div>
         </div>
 
@@ -51,21 +54,21 @@
         <p class="titulo-opcoes">Agora, sua bebida</p>
         <div class="bebidas-principais items-menu">
 
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarBebida(this)">
                 <img src="icones/coquinha_gelada 1.png" alt="bebida coca-cola">
                 <h1>Coquinha</h1>
                 <h2>lata de 350ml</h2>
                 <h3>R$ 6,00</h3>
             </div>
             
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarBebida(this)">
                 <img src="icones/Caipirinha-Brasileirinha.jpg" alt="bebida caipirinha">
                 <h1>Caipirinha</h1>
                 <h2>Cachaça com limão</h2>
                 <h3>R$ 15,00</h3>
             </div>
             
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarBebida(this)">
                 <img src="icones/laranja.jpg" alt="bebida suco de laranja">
                 <h1>Suco de laranja</h1>
                 <h2>Suco de laranja sem açucar</h2>
@@ -77,21 +80,21 @@
         <p class="titulo-opcoes">Por fim, sua sobremesa</p>
         <div class="sobremesas-principais items-menu">
 
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarSobremesa(this)">
                 <img src="icones/pudim 1.png" alt="sobremesa pudim">
                 <h1>Pudim</h1>
                 <h2>Pudim ue</h2>
                 <h3>R$ 10,00</h3>
             </div>
             
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarSobremesa(this)">
                 <img src="icones/tiramisu.jpg" alt="sobremesa tiramisu">
                 <h1>Tiramisu</h1>
                 <h2>Sorvete chique</h2>
                 <h3>R$ 20,00</h3>
             </div>
             
-            <div class="item-menu">
+            <div class="item-menu" onclick="selecionarSobremesa(this)">
                 <img src="icones/sorvete.jpg" alt="sobremesa sorvete">
                 <h1>Sorvete</h1>
                 <h2>Sorvete diversos sabores</h2>
@@ -108,5 +111,9 @@
 
         </button>
     </footer>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
