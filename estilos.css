@@ -9,6 +9,7 @@ header {
     top: 0px;
     left: 0px;
     right: 0px;
+    z-index: 1;
 }
 
 .titulo {
@@ -133,4 +134,11 @@ footer button {
 
 .escondido {
     display: none;
+}
+
+.botao-confirmar {
+    background-color: #32b72f;
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 20px;
 }

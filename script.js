@@ -23,7 +23,7 @@ function selecionarPratoPrincipal(pratoPedido) {
     pratoPedido.querySelector("ion-icon").classList.remove("escondido");
     pratoPedido.classList.add("item-selecionado")
     itemsPedidos.pratoPrincipal = pratoPedido;
-
+    verificaPedido()
 }
 
 function selecionarBebida(bebida){
@@ -36,6 +36,7 @@ function selecionarBebida(bebida){
     bebida.querySelector("ion-icon").classList.remove("escondido");
     bebida.classList.add("item-selecionado")
     itemsPedidos.bebida = bebida;
+    verificaPedido()
 }
 
 function selecionarSobremesa(sobremesa) {
@@ -48,4 +49,16 @@ function selecionarSobremesa(sobremesa) {
     sobremesa.querySelector("ion-icon").classList.remove("escondido");
     sobremesa.classList.add("item-selecionado")
     itemsPedidos.sobremesa = sobremesa;
+    verificaPedido()
+}
+
+//Funcao que verefica se os tres items foram pedidos
+function verificaPedido() {
+
+    const confirmar = document.querySelector("footer button")
+    
+    if (itemsPedidos.pratoPrincipal != null && itemsPedidos.bebida != null && itemsPedidos.sobremesa != null) {
+        confirmar.classList.add("botao-confirmar");
+        confirmar.innerHTML = "Fechar Pedido";
+    }
 }
