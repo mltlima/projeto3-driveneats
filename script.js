@@ -71,17 +71,34 @@ function verificaPedido() {
     }
 }
 
+function verificarPedido(){
+    document.querySelector(".nome-prato").innerHTML = itemsPedidos.pratoPrincipal.querySelector("h1").innerHTML
+    document.querySelector(".preco-prato").innerHTML = itemsPedidos.pratoPrincipalPreco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    document.querySelector(".nome-bebida").innerHTML = itemsPedidos.bebida.querySelector("h1").innerHTML
+    document.querySelector(".preco-bebida").innerHTML = itemsPedidos.bebidaPreco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    document.querySelector(".nome-sobremesa").innerHTML = itemsPedidos.sobremesa.querySelector("h1").innerHTML
+    document.querySelector(".preco-sobremesa").innerHTML = itemsPedidos.sobremesaPreco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    document.querySelector(".valor-total").innerHTML = itemsPedidos.valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    document.querySelector(".confirmar-pedido").classList.remove("escondido");
+}
+
 function fecharPedido() {
-    
+
+    //prompt para o nome e endereço
+    itemsPedidos.nome = prompt("Qual o seu nome? ");
+    itemsPedidos.endereco = prompt("Qual o seu endereço? ");
+
     let uri =   `Olá, gostaria de fazer o pedido:
                 - Prato: ${itemsPedidos.pratoPrincipal.querySelector("h1").innerHTML}
                 - Bebida: ${itemsPedidos.bebida.querySelector("h1").innerHTML}
                 - Sobremesa: ${itemsPedidos.sobremesa.querySelector("h1").innerHTML}
-                Total: R$${itemsPedidos.valorTotal}`
+                Total: R$${itemsPedidos.valorTotal}
+                
+                Nome: ${itemsPedidos.nome}
+                Endereço: ${itemsPedidos.endereco}`
     
     let encoded = encodeURIComponent(uri);
     window.open(`https://wa.me/553131313131?text=${encoded}`);
-    //alert(uri);
 }
 
 function adicionarDados() {
@@ -89,6 +106,10 @@ function adicionarDados() {
     itemsPedidos.pratoPrincipalPreco
 }
 
-function confirmaPedido() {
+function cancelar() {
+    document.querySelector(".confirmar-pedido").classList.toggle("escondido");
+}
 
+function enviarPedido() {
+    fecharPedido();
 }
