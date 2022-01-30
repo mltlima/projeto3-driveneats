@@ -23,9 +23,9 @@ function selecionarPratoPrincipal(pratoPedido) {
     pratoPedido.querySelector("ion-icon").classList.remove("escondido");
     pratoPedido.classList.add("item-selecionado")
     itemsPedidos.pratoPrincipal = pratoPedido;
-    const preco = parseFloat(pratoPedido.querySelector("h3").innerHTML.split(' ')[1]);
+    const preco = parseFloat(pratoPedido.querySelector("h3").innerHTML.split(' ')[1].replace(',', '.'));
     itemsPedidos.pratoPrincipalPreco = preco;
-    verificaPedido()
+    verifica3Pedidos()
 }
 
 function selecionarBebida(bebida){
@@ -38,9 +38,9 @@ function selecionarBebida(bebida){
     bebida.querySelector("ion-icon").classList.remove("escondido");
     bebida.classList.add("item-selecionado")
     itemsPedidos.bebida = bebida;
-    const preco = parseFloat(bebida.querySelector("h3").innerHTML.split(' ')[1]);
+    const preco = parseFloat(bebida.querySelector("h3").innerHTML.split(' ')[1].replace(',', '.'));
     itemsPedidos.bebidaPreco = preco;
-    verificaPedido()
+    verifica3Pedidos()
 }
 
 function selecionarSobremesa(sobremesa) {
@@ -53,13 +53,13 @@ function selecionarSobremesa(sobremesa) {
     sobremesa.querySelector("ion-icon").classList.remove("escondido");
     sobremesa.classList.add("item-selecionado")
     itemsPedidos.sobremesa = sobremesa;
-    const preco = parseFloat(sobremesa.querySelector("h3").innerHTML.split(' ')[1]);
+    const preco = parseFloat(sobremesa.querySelector("h3").innerHTML.split(' ')[1].replace(',', '.'));
     itemsPedidos.sobremesaPreco = preco;
-    verificaPedido()
+    verifica3Pedidos()
 }
 
 //Funcao que verefica se os tres items foram pedidos
-function verificaPedido() {
+function verifica3Pedidos() {
 
     const confirmar = document.querySelector("footer button")
     if (itemsPedidos.pratoPrincipal != null && itemsPedidos.bebida != null && itemsPedidos.sobremesa != null) {
@@ -71,6 +71,8 @@ function verificaPedido() {
     }
 }
 
+
+//Mostra os items pedidos para confirmacao do usuario
 function verificarPedido(){
     document.querySelector(".nome-prato").innerHTML = itemsPedidos.pratoPrincipal.querySelector("h1").innerHTML
     document.querySelector(".preco-prato").innerHTML = itemsPedidos.pratoPrincipalPreco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
@@ -98,17 +100,14 @@ function fecharPedido() {
                 Endereço: ${itemsPedidos.endereco}`
     
     let encoded = encodeURIComponent(uri);
-    window.open(`https://wa.me/553131313131?text=${encoded}`);
+    window.open(`https://wa.me/553131313131?text=${encoded}`, '_blank');
 }
 
-function adicionarDados() {
-
-    itemsPedidos.pratoPrincipalPreco
-}
 
 function cancelar() {
     document.querySelector(".confirmar-pedido").classList.toggle("escondido");
 }
+
 
 function enviarPedido() {
     fecharPedido();
