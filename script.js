@@ -63,7 +63,6 @@ function verifica3Pedidos() {
 
     const confirmar = document.querySelector("footer button")
     if (itemsPedidos.pratoPrincipal != null && itemsPedidos.bebida != null && itemsPedidos.sobremesa != null) {
-        //alert(itemsPedidos.valorTotal.toFixed(2));
         itemsPedidos.valorTotal = itemsPedidos.bebidaPreco + itemsPedidos.pratoPrincipalPreco + itemsPedidos.sobremesaPreco;
         confirmar.classList.add("botao-confirmar");
         confirmar.innerHTML = "Fechar Pedido";
@@ -82,13 +81,12 @@ function verificarPedido(){
     document.querySelector(".preco-sobremesa").innerHTML = itemsPedidos.sobremesaPreco.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
     document.querySelector(".valor-total").innerHTML = itemsPedidos.valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
     document.querySelector(".confirmar-pedido").classList.remove("escondido");
+    //prompt para o nome e endereço
+    itemsPedidos.nome = prompt("Qual o seu nome? ");//verificar
+    itemsPedidos.endereco = prompt("Qual o seu endereço? ");//verificar
 }
 
 function fecharPedido() {
-
-    //prompt para o nome e endereço
-    itemsPedidos.nome = prompt("Qual o seu nome? ");
-    itemsPedidos.endereco = prompt("Qual o seu endereço? ");
 
     let uri =   `Olá, gostaria de fazer o pedido:
                 - Prato: ${itemsPedidos.pratoPrincipal.querySelector("h1").innerHTML}
