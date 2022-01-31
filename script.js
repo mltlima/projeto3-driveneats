@@ -82,15 +82,11 @@ function verificarPedido(){
     document.querySelector(".valor-total").innerHTML = itemsPedidos.valorTotal.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
     document.querySelector(".confirmar-pedido").classList.remove("escondido");
     //prompt para o nome e endereço
-    //itemsPedidos.nome = prompt("Qual o seu nome? ");//verificar
-    //itemsPedidos.endereco = prompt("Qual o seu endereço? ");//verificar
+    itemsPedidos.nome = prompt("Qual o seu nome? ");
+    itemsPedidos.endereco = prompt("Qual o seu endereço? ");
 }
 
 function fecharPedido() {
-    
-    //prompt para o nome e endereço
-    itemsPedidos.nome = prompt("Qual o seu nome? ");//verificar
-    itemsPedidos.endereco = prompt("Qual o seu endereço? ");//verificar
 
     let uri =   `Olá, gostaria de fazer o pedido:
                 - Prato: ${itemsPedidos.pratoPrincipal.querySelector("h1").innerHTML}
